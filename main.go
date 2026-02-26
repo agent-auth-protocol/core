@@ -18,7 +18,7 @@ var (
 	agentRegistry = make(map[string]ed25519.PublicKey)
 	mu            sync.RWMutex
 	// Server's private key for signing the JWTs (Simulated for V1)
-	_, serverPrivateKey, _ = ed25519.GenerateKey(nil)
+	serverPublicKey, serverPrivateKey, _ = ed25519.GenerateKey(nil)
 )
 
 type RegisterRequest struct {
@@ -95,5 +95,6 @@ func main() {
 
 	fmt.Println("🛡️ AgentAuth-Core running on :8080")
 	fmt.Println("Architecting Trust for the Autonomous Economy.")
+	fmt.Printf("🗝️  API GATEWAY PUBLIC KEY: %x\n", serverPublicKey)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
