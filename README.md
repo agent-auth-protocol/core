@@ -12,7 +12,7 @@ Human OAuth flows (redirects, browser sessions, magic links) inherently fail for
 2. **Cryptographic Identity:** Agents are identified by Ed25519 keypairs, not fragile API keys.
 3. **Ephemeral Access:** By default, agent JWTs expire in 5 minutes, significantly reducing the blast radius of a compromised agent.
 
-## Flow
+## 🏗️ Flow
 
 ```mermaid
 sequenceDiagram
